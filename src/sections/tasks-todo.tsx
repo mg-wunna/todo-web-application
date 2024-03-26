@@ -10,6 +10,7 @@ export type TasksTodoSectionProps = {
   deleteTodoHandler: (todoIndex: number) => void;
 };
 
+// prettier-ignore
 /**
  * ### Tasks todo section ###
  * @description This section can render tasks todo.
@@ -24,22 +25,16 @@ export type TasksTodoSectionProps = {
  * @version 1.0.0
  * @author Wunna
  */
-const TasksTodoSection = ({
-  todoList,
-  checkTodoHandler,
-  deleteTodoHandler,
-}: TasksTodoSectionProps) => {
+const TasksTodoSection = ({ todoList, checkTodoHandler, deleteTodoHandler }: TasksTodoSectionProps) => {
   return (
     <>
+      {/* Title for tasks todo */}
       <p className="text-lg text-green-500">Tasks to do - {todoList.length}</p>
+    
+      {/* List for tasks todo */}
       <div className="flex flex-1 flex-grow-[3] flex-col overflow-y-auto">
         {todoList.map((item, index) => (
-          <TodoItem
-            key={index}
-            text={item}
-            onCheck={() => checkTodoHandler(index)}
-            onDelete={() => deleteTodoHandler(index)}
-          />
+          <TodoItem key={index} text={item} onCheck={() => checkTodoHandler(index)} onDelete={() => deleteTodoHandler(index)} />
         ))}
       </div>
     </>
