@@ -2,15 +2,13 @@ import { useCallback, useEffect, useState } from "react";
 import AddTodo from "./components/add-todo";
 import TodoItem from "./components/todo-item";
 
-export type Todo = { text: string };
-
 const App = () => {
   const [keyword, setKeyword] = useState("");
-  const [todoList, setTodoList] = useState<Todo[]>([]);
-  const [doneList, setDoneList] = useState<Todo[]>([]);
+  const [todoList, setTodoList] = useState<string[]>([]);
+  const [doneList, setDoneList] = useState<string[]>([]);
 
   const addTaskHandler = useCallback(() => {
-    setTodoList((prevTodoList) => [...prevTodoList, { text: keyword }]);
+    setTodoList((prevTodoList) => [...prevTodoList, keyword]);
     setKeyword("");
   }, [keyword]);
 
@@ -41,13 +39,13 @@ const App = () => {
     setDoneList(JSON.parse(doneList));
 
     const keyword = localStorage.getItem("keyword") || "";
-    setKeyword(JSON.parse(keyword));
+    setKeyword(keyword);
   }, []);
 
   useEffect(() => {
     localStorage.setItem("todoList", JSON.stringify(todoList));
     localStorage.setItem("doneList", JSON.stringify(doneList));
-    localStorage.setItem("keyword", JSON.stringify(keyword));
+    localStorage.setItem("keyword", keyword);
   }, [doneList, keyword, todoList]);
 
   return (
@@ -66,7 +64,7 @@ const App = () => {
           {todoList.map((item, index) => (
             <TodoItem
               key={index}
-              text={item.text}
+              text={item}
               onCheck={() => checkTodoHandler(index)}
               onDelete={() => deleteTodoHandler(index)}
             />
@@ -77,7 +75,7 @@ const App = () => {
         </p>
         <div className="flex flex-1 flex-grow-[1] flex-col overflow-y-auto">
           {doneList.map((item, index) => (
-            <TodoItem key={index} text={item.text} isDone />
+            <TodoItem key={index} text={item} isDone />
           ))}
         </div>
       </div>
