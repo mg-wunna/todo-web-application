@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import AddTodo from "./components/add-todo";
-import TodoItem from "./components/todo-item";
+import TasksDoneSection from "./sections/tasks-done";
 import TasksTodoSection from "./sections/tasks-todo";
 
 /**
@@ -84,14 +84,7 @@ const App = () => {
           checkTodoHandler={checkTodoHandler}
           deleteTodoHandler={deleteTodoHandler}
         />
-        <p className="mt-4 text-lg text-red-500">
-          Tasks done - {doneList.length}
-        </p>
-        <div className="flex flex-1 flex-grow-[1] flex-col overflow-y-auto">
-          {doneList.map((item, index) => (
-            <TodoItem key={index} text={item} isDone />
-          ))}
-        </div>
+        <TasksDoneSection doneList={doneList} />
       </div>
     </div>
   );
