@@ -1,3 +1,12 @@
+/**
+ * ### Trash icon ###
+ * @description This icon can render trash svg.
+ * @returns Trash svg icon
+ * @example
+ * <TrashIcon />
+ * @version 1.0.0
+ * @author Wunna
+ */
 const TrashIcon = () => {
   return (
     <svg

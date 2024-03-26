@@ -1,3 +1,12 @@
+/**
+ * ### Check Icon ###
+ * @description This icon can render check svg.
+ * @returns Check svg icon
+ * @example
+ * <CheckIcon />
+ * @version 1.0.0
+ * @author Wunna
+ */
 const CheckIcon = () => {
   return (
     <svg

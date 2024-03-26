@@ -1,3 +1,12 @@
+/**
+ * ### Plus Icon ###
+ * @description This icon can render plus svg.
+ * @returns Plus svg icon
+ * @example
+ * <PlusIcon />
+ * @version 1.0.0
+ * @author Wunna
+ */
 const PlusIcon = () => {
   return (
     <svg
