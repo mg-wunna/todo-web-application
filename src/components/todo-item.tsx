@@ -3,9 +3,9 @@ import TrashIcon from "../icons/trash-icon";
 
 export type TodoItemProps = {
   text: string;
-  isDone: boolean;
-  onCheck: () => void;
-  onDelete: () => void;
+  isDone?: boolean;
+  onCheck?: () => void;
+  onDelete?: () => void;
 };
 
 const TodoItem = ({ text, isDone, onCheck, onDelete }: TodoItemProps) => {
