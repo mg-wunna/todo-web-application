@@ -14,6 +14,7 @@ export type TodoItemProps = {
   onDelete?: () => void;
 };
 
+// prettier-ignore
 /**
  * ### Todo item component ###
  * @description This component can render todo item.
@@ -32,19 +33,19 @@ export type TodoItemProps = {
 const TodoItem = memo(({ text, isDone, onCheck, onDelete }: TodoItemProps) => {
   return (
     <div className="flex items-center gap-2 rounded-md border-b border-solid border-gray-200 p-2 py-3">
+      {/* Text label */}
       <p className={`flex-1 ${isDone ? "line-through" : ""}`}>{text}</p>
       {!isDone && (
         <div className="flex items-center gap-2">
-          <div
-            className="flex aspect-square h-full items-center justify-center rounded-md bg-blue-500 p-1 text-white"
-            onClick={onCheck}
-          >
+          {/* Check icon button */}
+          <div className="flex aspect-square h-full items-center justify-center rounded-md bg-blue-500 p-1 text-white"
+               onClick={onCheck} >
             <CheckIcon />
           </div>
-          <div
-            className="flex aspect-square h-full items-center justify-center rounded-md bg-blue-500 p-1 text-white"
-            onClick={onDelete}
-          >
+
+          {/* Delete icon button */}
+          <div className="flex aspect-square h-full items-center justify-center rounded-md bg-blue-500 p-1 text-white"
+               onClick={onDelete} >
             <TrashIcon />
           </div>
         </div>
