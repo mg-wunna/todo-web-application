@@ -6,6 +6,7 @@ export type TasksDoneProps = {
   doneList: string[];
 };
 
+// prettier-ignore
 /**
  * ### Tasks done section ###
  * @description This section can render tasks done list.
@@ -19,13 +20,12 @@ export type TasksDoneProps = {
 const TasksDoneSection = ({ doneList }: TasksDoneProps) => {
   return (
     <>
-      <p className="mt-4 text-lg text-red-500">
-        Tasks done - {doneList.length}
-      </p>
+      {/* Title */}
+      <p className="mt-4 text-lg text-red-500">Tasks done - {doneList.length}</p>
+
+      {/* List */}
       <div className="flex flex-1 flex-grow-[1] flex-col overflow-y-auto">
-        {doneList.map((item, index) => (
-          <TodoItem key={index} text={item} isDone />
-        ))}
+        {doneList.map((item, index) => <TodoItem key={index} text={item} isDone /> )}
       </div>
     </>
   );
