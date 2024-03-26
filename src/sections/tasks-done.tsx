@@ -1,9 +1,21 @@
 import TodoItem from "../components/todo-item";
 
+/** Tasks done properties */
 export type TasksDoneProps = {
+  /** What is done list? */
   doneList: string[];
 };
 
+/**
+ * ### Tasks done section ###
+ * @description This section can render tasks done list.
+ * @param props - What is tasks done section?
+ * @returns Tasks done section
+ * @example
+ * <TasksDoneSection doneList={["Hello World"]} />
+ * @version 1.0.0
+ * @author Wunna
+ */
 const TasksDoneSection = ({ doneList }: TasksDoneProps) => {
   return (
     <>
