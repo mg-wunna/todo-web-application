@@ -75,7 +75,9 @@ const App = () => {
   return (
     <div className="flex h-screen w-screen items-center justify-center">
       {/* Centered division */}
-      <div className="flex h-[80vh] w-[70vw] flex-col overflow-hidden rounded-xl border border-solid border-gray-200 bg-gray-50 p-8 pb-0 shadow-md">
+      <div className="flex h-[80vh] w-[70vw] flex-col overflow-hidden rounded-xl border border-solid border-gray-200 bg-gray-50 p-8 pt-4 pb-0 shadow-md">
+        <h1 className="text-center mb-4 text-xl">Todo Web Application</h1>
+
         {/* Add todo input and button */}
         <AddTodo keyword={keyword} onKeywordChange={setKeyword} onAddClick={addTaskHandler} />
 
